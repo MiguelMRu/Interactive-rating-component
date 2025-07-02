@@ -1,9 +1,13 @@
+import illustration from "../assets/illustration-thank-you.svg"
+import './Thanks.css'
+
 export function Thanks({rating}){
 
 
     return(
-    <section>
-        <p><strong>You selected {rating} out of 5</strong></p>
+    <section className="thanks">
+        <img src={illustration} alt="Thanks for botting ilustration" />
+        <span className="voted"><p>You selected {rating} out of 5</p></span>
 
         <h2>Thank you!</h2>
 
