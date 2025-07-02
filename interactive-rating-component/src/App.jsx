@@ -2,24 +2,28 @@ import { useState } from 'react'
 import './App.css'
 import star from "./assets/icon-star.svg"
 import { Thanks } from './components/Thanks'
+import { Buttons } from './components/Buttons'
 
 function App() {
+  const [submited, setSubmited] = useState(false)
+  const [selected, setSelected] = useState(null)
   
-  const rating = [1,2,3,4,5]
-  const [selected, setSelected] = useState()
+  const rating = submited ? 'no-display' : 'rating'
 
-  const selectClass = selected ? 'rating-button selected' : 'rating-button'
 
-  const handleClick = (number) =>{
-    setSelected(number)
-
-  }
    
+  const handleSubmit = (e) =>{
+    e.preventDefault()
+    if(selected === null) return
+
+    setSubmited(!submited)
+    
+  }
 
   return (
-    
+    <main >
 
-    <main>
+      <section className={rating}>
       <div className='star-container'>
         <img src={star} alt="star icon" />
       </div>
@@ -30,31 +34,20 @@ function App() {
       <p>Please let us know how we did with your support request. All feedback is appreciated 
       to help us improve our offering!</p>
 
-
-      <div>     
-      {
-        rating.map((num) => (
-          <button
-            key={num}
-            className={selectClass}
-            onClick={() => handleClick(num)}
-
-            >
-            {num}
-          </button>
-
-        ))
-      }
+      <Buttons selected={selected} setSelected={setSelected}/>
       
-    </div>
 
-      <form >
+      <form onSubmit={handleSubmit}>
       <button type="submit">SUBMIT</button>
       </form>
+      </section>
 
-      {selected ? <Thanks rating={selected}/> : ''}
+      
+      {submited ? <Thanks rating={selected}/> : ''}
 
     </main>
+
+    
   )
 }
 
