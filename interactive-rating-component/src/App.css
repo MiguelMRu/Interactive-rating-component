@@ -1,42 +1,52 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+
+main{
+    
+    font-family: "Overpass", sans-serif;
+    background-color: hsl(216, 12%, 8%);
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    border-radius: 24px;
+    width: 350px;
+    gap: 15px;
+
+
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.star-container{
+    background-color: hsl(213, 19%, 18%);
+    display: block;
+    width: fit-content;
+    height: fit-content;
+    padding: 15px;
+    border-radius: 100%;
+    display: grid;
+    place-content: center;
+    margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+P{
+    font-size: 15px;
+    color: hsl(217, 12%, 63%);
+    margin: 0;
 }
 
-.card {
-  padding: 2em;
+h1{
+    margin: 0;
 }
 
-.read-the-docs {
-  color: #888;
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+button{
+    background-color: hsl(25, 97%, 53%);
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 15px  0 15px 0;
+
 }
