@@ -6,7 +6,7 @@ main{
     background-color: hsl(216, 12%, 8%);
     padding: 25px;
     border-radius: 24px;
-    width: 350px;
+    width: 25vw;
 
 }
 
@@ -64,4 +64,14 @@ button:hover{
 
 .no-display{
     display: none;
+}
+
+
+@media screen and (max-width: 600px) {
+    main{
+        width: 70vw;
+    }
+    
+    
+    
 }
